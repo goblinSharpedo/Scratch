@@ -1,2 +1,0 @@
-# Scratch
-Scratch Project Schenanigans
