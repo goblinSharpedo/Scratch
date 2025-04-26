@@ -56,6 +56,10 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+#st-helmet{
+  height:400px;
+}
+
 .createForm{
   display:flex;
   flex-direction:column;

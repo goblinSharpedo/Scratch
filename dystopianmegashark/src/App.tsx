@@ -19,6 +19,7 @@ function App() {
 
   return (
     <>
+    < img src='white_st_helmet.png'id='st-helmet'/>
     <h1>Welcome to Totally-not-a-Social-Credit-Score!</h1>
     <h2>(because if Amazon can do it, so can we)</h2>
     <form onSubmit={handleSubmit} className='createForm'>
