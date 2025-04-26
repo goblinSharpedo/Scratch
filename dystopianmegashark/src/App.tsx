@@ -1,33 +1,34 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import {FormEvent} from 'react'
+
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+//make post request
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) =>{
+    event.preventDefault()
+    const formData = new FormData(event.currentTarget);
+    const formObject = Object.fromEntries(formData.entries());
+    console.log(formObject);
+    await fetch(import.meta.env.VITE_SERVER_EMPLOYEE_CREATOR, {
+      method:'POST',
+      headers:{"Content-Type": "application/json",
+      body: JSON.stringify(formObject)
+      }
+    })
+  }
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    < img src='white_st_helmet.png'id='st-helmet'/>
+    <h1>Not-a-Dystopian-Society-Social-Credit-Score-App</h1>
+    <h2>(because if Amazon can do it, so can we)</h2>
+    <form onSubmit={handleSubmit} className='createForm'>
+      <input type='text' placeholder='First Name' name = 'firstName'></input>
+      <input type='text' placeholder='Last Name' name = 'lastName'></input>
+      <input type='text' placeholder='Age' name = 'age'></input>
+      <input type='text' placeholder='Role' name = 'role'></input>
+      <button type='submit'>Submit Citizen for Processing</button>
+    </form>
     </>
   )
 }
