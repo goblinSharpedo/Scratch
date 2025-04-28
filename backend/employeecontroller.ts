@@ -1,5 +1,8 @@
-const { Employee } = require('./employeemodel');
-const express = require('express');
+//const { Employee } = require('./employeemodel');
+//const express = require('express');
+
+import Employee from './employeemodel.js';
+import express from 'express';
 
 const EmployeeController = {
   // Create a new student in the Database
@@ -10,7 +13,7 @@ const EmployeeController = {
 
     Employee.create({ firstName, lastName, role, age })
       .then((newEmployee) => {
-        res.sendStatus(200).json(newEmployee);
+        res.send(200).json(newEmployee);
       })
       .catch((err: Error) => {
         console.error('Error with createEmployee', err.message);
@@ -19,6 +22,7 @@ const EmployeeController = {
   },
 };
 
-module.exports = EmployeeController;
+//module.exports = EmployeeController;
+//export {};
 
-export {};
+export default EmployeeController;
