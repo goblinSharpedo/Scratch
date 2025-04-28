@@ -2,9 +2,10 @@
   "name": "scratch",
   "version": "1.0.0",
   "description": "Scratch Project Schenanigans",
-  "main": "server.js",
+  "main": "server.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx ts-node server.ts"
   },
   "repository": {
     "type": "git",
@@ -13,17 +14,19 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "module",
+  "type": "commonjs",
   "bugs": {
     "url": "https://github.com/goblinSharpedo/Scratch/issues"
   },
   "homepage": "https://github.com/goblinSharpedo/Scratch#readme",
   "devDependencies": {
+    "@types/express": "^5.0.1",
     "@types/node": "^22.15.3",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3"
   },
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^5.1.0",
     "from": "^0.1.7",
     "mongoose": "^8.14.0"

@@ -1,24 +1,34 @@
-import express from 'express';
-import mongoose from 'mongoose';
-import Employee from './employeemodel'
-
+const cors = require('cors');
+const express = require('express');
+const mongoose = require('mongoose');
+const Employee = require('./employeemodel');
 const app = express();
-const PORT = 3000; 
+const PORT = 3000;
 
 // Middleware
+
+app.use(
+  cors({
+    origin: 'http://localhost:5173',
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    credentials: true,
+  })
+);
+
 app.use(express.json());
 
 // Connect to DB
-mongoose.connect('mongodb://localhost:27017/employeesSchema')
-.then(() => console.log('Connected to DB'))
-.catch((err) => console.error('DB connection failed:', err));
+mongoose
+  .connect('mongodb://localhost:27017/employeesSchema')
+  .then(() => console.log('Connected to DB'))
+  .catch((err) => console.error('DB connection failed:', err));
 
 // Route to create a new employee
 app.post('/', async (req, res) => {
-  const { firstName, lastName, age,  role } = req.body;
-  console.log(req.body)
+  const { firstName, lastName, age, role } = req.body;
+  console.log(req.body);
   const newEmployee = new Employee({ firstName, lastName, age, role });
-  console.log(newEmployee)
+  console.log(newEmployee);
 
   try {
     const savedEmployee = await newEmployee.save();
@@ -28,7 +38,7 @@ app.post('/', async (req, res) => {
   }
 });
 
-// post request to add rating 
+// post request to add rating
 // post (req, res)
 // {rating} = req.body
 // if ( !1-10){}
@@ -36,9 +46,11 @@ app.post('/', async (req, res) => {
 // updatedemployee = employee.findOne(name? ID?)
 // updatedemployee.rating.push(rating)
 // res.json(avgrat) <-- calculated in DB
-// catch error 
+// catch error
 
 // Start the server
 app.listen(PORT, () => {
   console.log(`🚀 Server is running on http://localhost:${PORT}`);
 });
+
+export {};

@@ -2,7 +2,8 @@
 // need to install types
 // TypeScript is not aware of the Node.js environment and its built-in functions, including require.
 // To fix this issue, you need to install the type definitions for Node.js using the command npm i --save-dev @types/node
-import mongoose, { Schema, model } from 'mongoose';
+
+const mongoose = require('mongoose') as typeof import('mongoose');
 
 type EmployeeType = {
   firstName: string;
@@ -13,7 +14,7 @@ type EmployeeType = {
   ratings?: number[];
 };
 
-const employeeSchema = new Schema<EmployeeType>({
+const employeeSchema = new mongoose.Schema({
   firstName: { type: String, required: true },
   lastName: { type: String, required: true },
   role: { type: String, required: true },
@@ -23,6 +24,8 @@ const employeeSchema = new Schema<EmployeeType>({
 });
 // You must export your model through module.exports
 // The collection name should be 'student'
-const Employee = model<EmployeeType>('Employee', employeeSchema);
+//const Employee = mongoose.model<EmployeeType>('Employee', employeeSchema);
 
-export default Employee;
+module.exports = mongoose.model<EmployeeType>('Employee', employeeSchema);
+
+export {};
