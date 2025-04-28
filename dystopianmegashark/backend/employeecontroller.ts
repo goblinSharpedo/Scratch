@@ -1,4 +1,5 @@
-const Employee = require('./StudentModel');
+import Employee from './employeemodel.ts';
+import express from 'express';
 
 const EmployeeController = {
   // Create a new student in the Database
@@ -7,7 +8,7 @@ const EmployeeController = {
   createStudent(req, res) {
     const { firstName, lastName, role, age } = req.body;
 
-    Employee.create({ firstName, lastName, age })
+    Employee.create({ firstName, lastName, role, age })
       .then((newEmployee) => {
         res.status(200).json(newEmployee);
       })
@@ -15,5 +16,5 @@ const EmployeeController = {
         console.error('Error with createEmployee', err.message);
         res.status(500).json({ error: 'createEmployee failed' });
       });
-  }
+  },
 };
