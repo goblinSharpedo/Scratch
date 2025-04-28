@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/goblinSharpedo/Scratch/issues"
   },
-  "homepage": "https://github.com/goblinSharpedo/Scratch#readme"
+  "homepage": "https://github.com/goblinSharpedo/Scratch#readme",
+  "devDependencies": {
+    "@types/node": "^22.15.2"
+  }
 }
