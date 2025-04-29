@@ -1,0 +1,22 @@
+{
+  "name": "iteration-project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "client": "cd dmsfront && npm run dev",
+    "server": "cd backend && npm run server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cat-snake-54/Iteration-Project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cat-snake-54/Iteration-Project/issues"
+  },
+  "homepage": "https://github.com/cat-snake-54/Iteration-Project#readme",
+  "description": ""
+}
