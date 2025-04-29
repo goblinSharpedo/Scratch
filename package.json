@@ -18,5 +18,8 @@
     "url": "https://github.com/cat-snake-54/Iteration-Project/issues"
   },
   "homepage": "https://github.com/cat-snake-54/Iteration-Project#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "mongodb": "^6.16.0"
+  }
 }
