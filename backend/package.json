@@ -20,5 +20,8 @@
   "homepage": "https://github.com/goblinSharpedo/Scratch#readme",
   "devDependencies": {
     "@types/node": "^22.15.2"
+  },
+  "dependencies": {
+    "nodemon": "^3.1.10"
   }
 }
