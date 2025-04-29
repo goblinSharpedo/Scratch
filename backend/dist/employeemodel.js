@@ -10,7 +10,10 @@ const employeeSchema = new mongoose.Schema({
     role: { type: String, required: true },
     age: { type: Number, required: true },
     avgRate: { type: Number },
-    ratings: { type: [Number] },
+    ratings: {
+        type: String,
+        default: 'Ratings to come... Be on your best behavior',
+    },
 });
 // You must export your model through module.exports
 // The collection name should be 'student'

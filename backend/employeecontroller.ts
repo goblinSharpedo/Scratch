@@ -13,7 +13,7 @@ const EmployeeController = {
 
     Employee.create({ firstName, lastName, role, age })
       .then((newEmployee) => {
-        res.send(200).json(newEmployee);
+        res.status(200).json(newEmployee);
       })
       .catch((err: Error) => {
         console.error('Error with createEmployee', err.message);

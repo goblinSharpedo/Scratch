@@ -5,7 +5,7 @@ import express from 'express';
 //const mongoose = require('mongoose');
 import mongoose from 'mongoose';
 //const Employee = require('./employeemodel');
-import Employee from './employeemodel';
+import Employee from './employeemodel.js';
 const app = express();
 const PORT = 3000;
 // Middleware

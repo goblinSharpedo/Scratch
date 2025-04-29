@@ -1,6 +1,6 @@
 //const { Employee } = require('./employeemodel');
 //const express = require('express');
-import Employee from './employeemodel';
+import Employee from './employeemodel.js';
 const EmployeeController = {
     // Create a new student in the Database
     // Their information will be sent in the request body
@@ -9,7 +9,7 @@ const EmployeeController = {
         const { firstName, lastName, role, age } = req.body;
         Employee.create({ firstName, lastName, role, age })
             .then((newEmployee) => {
-            res.send(200).json(newEmployee);
+            res.status(200).json(newEmployee);
         })
             .catch((err) => {
             console.error('Error with createEmployee', err.message);
