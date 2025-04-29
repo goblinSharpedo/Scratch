@@ -1,4 +1,4 @@
-import Employee from './employeemodel.ts';
+import Employee from '../models/employeemodel.ts';
 import express from 'express';
 
 const EmployeeController = {
