@@ -1,11 +1,13 @@
-const dotenv = require('dotenv');
+import dotenv from 'dotenv';
 dotenv.config();
 
-const cors = require('cors');
-const express = require('express');
-const mongoose = require('mongoose');
+import cors from 'cors';
 
-const employeeRoute = require('./routes/employeeroute');
+import express from 'express';
+
+import mongoose from 'mongoose';
+
+import employeeRoute from './routes/employeeroute.js';
 
 const app = express();
 app.use(cors());
@@ -36,7 +38,7 @@ mongoose
     // useNewUrlParser: true,
     // useUnifiedTopology: true,
     // sets the name of the DB that our collections are part of
-    dbName: 'cat-snake',
+    dbName: 'Cat-Snake',
   })
   .then(() => console.log('👌👌 MongoDB connected'))
   .catch((err) => console.log('👎🏻👎🏻 MongoDB connection error:', err.message));

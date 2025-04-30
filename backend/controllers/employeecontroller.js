@@ -1,7 +1,7 @@
-const models = require('../models/employeemodel.ts');
+import models from '../models/employeemodel.js';
 const { Employee } = models;
 
-//const employeeController = {};
+const employeeController = {};
 
 employeeController.submitEmployee = (req, res, next) => {
   const { firstName, lastName, role, age } = req.body;
@@ -19,4 +19,4 @@ employeeController.submitEmployee = (req, res, next) => {
     });
 };
 
-module.exports = employeeController;
+export default employeeController;
