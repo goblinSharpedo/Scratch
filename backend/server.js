@@ -34,7 +34,7 @@ mongoose
     // useNewUrlParser: true,
     // useUnifiedTopology: true,
     // sets the name of the DB that our collections are part of
-    dbName: 'dystopian_megashark',
+    dbName: 'cat-snake',
   })
   .then(() => console.log('👌👌 MongoDB connected'))
   .catch((err) => console.log('👎🏻👎🏻 MongoDB connection error:', err.message));
