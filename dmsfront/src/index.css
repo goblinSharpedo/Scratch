@@ -13,8 +13,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-
-
 body {
   margin: 0;
   display: flex;
@@ -26,15 +24,13 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1;
-  margin:5px;
+  margin: 5px;
 }
-
 
 h2 {
   font-size: 1em;
-  margin-top:1em;
+  margin-top: 1em;
   margin-bottom: 1em;
-  
 }
 
 button {
@@ -44,6 +40,7 @@ button {
   font-size: 0.8em;
   font-weight: 500;
   font-family: inherit;
+  color: #0f0e0e;
   background-color: #fff8f8;
   cursor: pointer;
   transition: border-color 0.25s;
@@ -56,33 +53,29 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-#st-helmet{
-  height:400px;
+#st-helmet {
+  height: 400px;
 }
 
-.createForm{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
+.createForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-
-
 }
-.createForm input{
-  height:1.5em;
-  width:20em;
-  margin:0.5em;
+.createForm input {
+  height: 1.5em;
+  width: 20em;
+  margin: 0.5em;
 }
-.createForm button{
-
-  margin:0.5em;
+.createForm button {
+  margin: 0.5em;
 }
-
 
 @media (prefers-color-scheme: dark) {
   :root {
     color: #213547;
-    background-color: #ffffff;
+    background-color: #000000;
   }
   a:hover {
     color: #747bff;
