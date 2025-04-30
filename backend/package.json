@@ -20,7 +20,8 @@
   },
   "homepage": "https://github.com/goblinSharpedo/Scratch#readme",
   "devDependencies": {
-    "@types/node": "^22.15.2"
+    "@types/node": "^22.15.2",
+    "mongodb-memory-server": "^10.1.4"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
@@ -29,7 +30,9 @@
     "express": "^5.1.0",
     "express-sessions": "^1.0.6",
     "jest": "^29.7.0",
-    "mongoose": "^8.14.0",
-    "nodemon": "^3.1.10"
+    "mongoose": "^8.14.1",
+    "nodemon": "^3.1.10",
+    "supertest": "^7.1.0",
+    "ts-node": "^10.9.2"
   }
 }
