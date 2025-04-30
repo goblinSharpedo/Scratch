@@ -5,28 +5,15 @@ const cors = require('cors');
 const express = require('express');
 const mongoose = require('mongoose');
 
-const employeeRoute = require('./routes/employeeroute');
+const employeeRoute = require('./routes/employeeroute.ts');
 
 const app = express();
+app.use(cors());
 
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/', employeeRoute);
-
-// Route to create a new employee
-// app.use('/employees', async (req, res) => {
-//   const { firstName, lastName, age, role } = req.body;
-
-//   const newEmployee = new employee({ firstName, lastName, age, role });
-
-//   try {
-//     const savedEmployee = await newEmployee.save();
-//     res.status(201).json(savedEmployee);
-//   } catch (error) {
-//     res.status(400).json({ message: error.message });
-//   }
-// });
 
 app.use((req, res) => {
   res.status(404).send('Not Found');

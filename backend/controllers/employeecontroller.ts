@@ -1,20 +1,22 @@
-import Employee from '../models/employeemodel.ts';
-import express from 'express';
+const models = require('../models/employeemodel.ts');
+const { Employee } = models;
 
-const EmployeeController = {
-  // Create a new student in the Database
-  // Their information will be sent in the request body
-  // This should send the created student
-  createStudent(req, res) {
-    const { firstName, lastName, role, age } = req.body;
+//const employeeController = {};
 
-    Employee.create({ firstName, lastName, role, age })
-      .then((newEmployee) => {
-        res.status(200).json(newEmployee);
-      })
-      .catch((err) => {
-        console.error('Error with createEmployee', err.message);
-        res.status(500).json({ error: 'createEmployee failed' });
-      });
-  },
+employeeController.submitEmployee = (req, res, next) => {
+  const { firstName, lastName, role, age } = req.body;
+
+  Employee.create({ firstName, lastName, role, age })
+    .then((data) => {
+      console.log('Submit employee success at /employee/👌', data);
+      res.locals.employeeNew = data;
+
+      return next();
+    })
+    .catch((err) => {
+      console.error('Error with submitEmployee', err.message);
+      res.status(500).json({ error: 'Submit Employee failed' });
+    });
 };
+
+module.exports = employeeController;

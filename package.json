@@ -21,5 +21,8 @@
   "description": "",
   "dependencies": {
     "mongodb": "^6.16.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.3"
   }
 }
